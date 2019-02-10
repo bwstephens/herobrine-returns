@@ -1,3 +1,6 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
 \documentclass[12pt,oneside]{krantz}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,12 +9,9 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -21,19 +21,22 @@
 \usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
-            pdftitle={Herobrine Returns},
+            pdftitle={Book 4: Herobrine Returns},
             pdfauthor={Beckett Stephens},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{plainnat}
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -43,12 +46,6 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -71,12 +68,12 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \captionsetup[figure]{labelformat=empty}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
 
-\title{Herobrine Returns}
-\providecommand{\subtitle}[1]{}
-\subtitle{Book 4}
+\title{Book 4: Herobrine Returns}
 \author{Beckett Stephens}
-\date{2018-06-04}
+\date{2019-02-10}
 
 \begin{document}
 \maketitle
@@ -85,18 +82,16 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter*{Preface}\label{preface}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
 
 
-\begin{figure}
-\centering
 \includegraphics{img/1-herobrine-medium.jpg}
-\caption{}
-\end{figure}
 
 This book is about my adventures in a video game named Minecraft.
 
-\chapter*{About the Author}\label{about-the-author}
+\hypertarget{about-the-author}{%
+\chapter*{About the Author}\label{about-the-author}}
 
 
 Beckett Stephens is an aspiring author and illustrator. \emph{Herobrine
@@ -104,20 +99,18 @@ Returns} is his third published work. Beckett also loves Minecraft,
 Lego's, and Transformers, as well as making up endless stories while he
 walks. He currently lives in Maryland with his younger brother.
 
-\chapter*{Acknowledgements}\label{acknowledgements}
+\hypertarget{acknowledgements}{%
+\chapter*{Acknowledgements}\label{acknowledgements}}
 
 
 Thanks to Dad for helping me publish \emph{Herobrine Returns} online.
 Also, thanks to Minecraft community for the inspiration that helped me
 make this book.
 
-\chapter{Herobrine Returns}\label{herobrine-returns}
+\hypertarget{herobrine-returns}{%
+\chapter{Herobrine Returns}\label{herobrine-returns}}
 
-\begin{figure}
-\centering
-\includegraphics[width=6.25000in]{img/3-gods.jpg}
-\caption{}
-\end{figure}
+\includegraphics[width=4.6875in,height=\textheight]{img/3-gods.jpg}
 
 Herobrine came out and said, ``Come and get me!'' I said, ''No.''
 Herobrine said, ``I just wanted you to get a look at me. I will come
@@ -138,7 +131,10 @@ basically earth. I almost shut off Herobrine but he ran away before I
 could deactivate him. After that I took a nap. When I woke up I said,
 ``It's time we raid Herobrine's base.''
 
-\chapter{We Raid the Base}\label{we-raid-the-base}
+\hypertarget{we-raid-the-base}{%
+\chapter{We Raid the Base}\label{we-raid-the-base}}
+
+\includegraphics[width=4.6875in,height=\textheight]{img/7-door.jpg}
 
 Everybody was silent then Malek said, ``Are you crazy? That's
 impossible! People come in and then die.'' I said, ``My grandfather
@@ -162,12 +158,6 @@ Malek, Felix, and I got in Herobrine's base. Felix and I got in the
 vent, and Malek pretended to be a bad guy. I saw Cindy come out of a
 door and took a picture of her membership card.
 
-\begin{figure}
-\centering
-\includegraphics[width=6.25000in]{img/7-door.jpg}
-\caption{}
-\end{figure}
-
 \emph{In the bad guy's base\ldots{}}
 
 Felix was in a fight with Will. When the fight ended, Felix was put in
@@ -176,9 +166,8 @@ prison.
 \emph{In the tunnel\ldots{}}
 
 Aden, King Creeper, and Alex were almost done, but a sinkhole opened,
-and Aiden and the bomb fell Down. Aden died.
-
-\emph{In the bad guy's base\ldots{}}
+and Aiden and the bomb fell Down. Aden died. \emph{In the bad guy's
+base\ldots{}}
 
 Malek accidentally found Will who said, ``Malek? Is it really you?
 Guards, get him!'' Malek said, ``I knew this was a bad idea''. Malek was
@@ -195,14 +184,11 @@ I'll do,'' and everyone got out. King Creeper exploded but did not come
 back to life. I started to cry. I felt like my team was falling apart,
 but also I had to stay sharp.
 
+\hypertarget{the-bad-guy-survival-on-earth}{%
 \chapter{The Bad Guy Survival on
-Earth}\label{the-bad-guy-survival-on-earth}
+Earth}\label{the-bad-guy-survival-on-earth}}
 
-\begin{figure}
-\centering
-\includegraphics[width=6.25000in]{img/10-base.jpg}
-\caption{}
-\end{figure}
+\includegraphics[width=4.6875in,height=\textheight]{img/10-base.jpg}
 
 It would take a year to fix the base in the End. After the base was
 destroyed, Herobrine put his base on Earth. Since Herobrine has never
@@ -215,7 +201,10 @@ Creeper but this time it was all decorated with zombie decorations.
 Cindy looked around and then she heard someone say in a deep voice,
 ``Cindy, I was looking for you.'' Cindy said, ``King Zombie!''
 
-\chapter{The Battle of Our Lives}\label{the-battle-of-our-lives}
+\hypertarget{the-battle-of-our-lives}{%
+\chapter{The Battle of Our Lives}\label{the-battle-of-our-lives}}
+
+\includegraphics[width=2.60417in,height=\textheight]{img/13-forcefield.jpg}
 
 Herobrine left King Zombie in charge while he fought me. He took Cindy,
 Will, and the army of Enderman to our base. When Herobrine got to my
@@ -225,19 +214,16 @@ God there was a force field that things with bad magic can't go through.
 When everyone came out I said, ``Everyone fight Herobrine's Enderman,
 and I'll fight Herobrine.''
 
-\begin{figure}
-\centering
-\includegraphics[width=4.16667in]{img/13-forcefield.jpg}
-\caption{}
-\end{figure}
-
 \emph{One hour later\ldots{}}
 
 I said, ``We are losing the battle.'' The Villagers saw and decided to
 help. I said, ``The villagers were saved. Now it is just us and
 Herobrine.''
 
-\chapter{Herobrine and Us}\label{herobrine-and-us}
+\hypertarget{herobrine-and-us}{%
+\chapter{Herobrine and Us}\label{herobrine-and-us}}
+
+\includegraphics[width=2.60417in,height=\textheight]{img/15-orangeguy.jpg}
 
 Our team thought we had the advantage but we were wrong. Soon everybody
 was hurt but me. It was because of my life shield. I said, ``Guys we
@@ -246,12 +232,6 @@ turned into the Fire God. Felix and I fought Herobrine but Felix wasn't
 used to his power so after a while he would lose his power. As soon as
 Felix lost his power Herobrine picked up the Fire Gem and said,
 ``Yes\ldots{}more\ldots{}MORE!'' as he turned into the Fire God.
-
-\begin{figure}
-\centering
-\includegraphics[width=3.12500in]{img/15-orangeguy.jpg}
-\caption{}
-\end{figure}
 
 I called Everyone else and said, ``Help!'' Everyone came. Then a portal
 opened. I said, ``Steve, I was wondering where the Magic Gem was, and
@@ -262,17 +242,14 @@ the end. Herobrine punched me so hard that I turned back into a human.
 But Herobrine couldn't find the Life Gem, so he got the life lock key
 from our base instead. Herobrine had won.
 
-\chapter{The New World}\label{the-new-world}
+\hypertarget{the-new-world}{%
+\chapter{The New World}\label{the-new-world}}
+
+\includegraphics[width=2.60417in,height=\textheight]{img/17-greenguy.jpg}
 
 Felix was in a secret base when the door opened. Malek said, ``Herobrine
 destroyed the last town.'' Felix said, ``Herobrine got the life lock key
 and killed Beckett; now he has the upper hand.''
-
-\begin{figure}
-\centering
-\includegraphics[width=4.16667in]{img/17-greenguy.jpg}
-\caption{}
-\end{figure}
 
 \emph{At the bad guys base\ldots{}}
 
@@ -283,7 +260,8 @@ again.'' I went back to Felix's base and found Felix. We talked and
 talked, and then I said, ``That's it! I'll talk to Cindy and Will and
 see if they want to take down Herobrine.''
 
-\chapter{Will or Will Not}\label{will-or-will-not}
+\hypertarget{will-or-will-not}{%
+\chapter{Will or Will Not}\label{will-or-will-not}}
 
 \emph{In the Nether\ldots{}}
 
@@ -297,13 +275,14 @@ mask. I said, ``Mom?'' Cindy said, ``Yes, Herobrine forced me to give up
 all good and take on this disguise, or else I would die.'' Then Mom got
 the Water Gem turned into the water God.
 
-\chapter{The Last War}\label{the-last-war}
+\hypertarget{the-last-war}{%
+\chapter{The Last War}\label{the-last-war}}
 
-\includegraphics[width=0.78125in]{img/weapons-blueball.jpg}
-\includegraphics[width=0.31250in]{img/weapons-green.jpg}
-\includegraphics[width=0.78125in]{img/weapons-greengun.jpg}
-\includegraphics[width=0.78125in]{img/weapons-redguy.jpg}
-\includegraphics[width=0.78125in]{img/weapons-sword.jpg}
+\includegraphics[width=1.04167in,height=\textheight]{img/weapons-blueball.jpg}
+\includegraphics[width=0.3125in,height=\textheight]{img/weapons-green.jpg}
+\includegraphics[width=1.04167in,height=\textheight]{img/weapons-greengun.jpg}
+\includegraphics[width=1.04167in,height=\textheight]{img/weapons-redguy.jpg}
+\includegraphics[width=1.04167in,height=\textheight]{img/weapons-sword.jpg}
 
 Malek turned into the night God. I got my life sword; Malek got his
 night arrows and a night bow; and Mom got the ice machine. Suddenly
